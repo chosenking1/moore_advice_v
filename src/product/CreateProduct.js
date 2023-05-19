@@ -22,7 +22,7 @@ function CreateProduct() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8070/api/products/create', {
+      await axios.post('http://localhost:8000/api/products/create', {
         product_name: productName,
         description,
         price,

@@ -17,7 +17,7 @@ function UpdateProduct() {
 
   const fetchProduct = async () => {
     try {
-      const response = await axios.get(`http://localhost:8070/api/products/${id}`);
+      const response = await axios.get(`http://localhost:8000/api/products/${id}`);
       setProduct(response.data);
       setProductName(response.data.product_name);
       setDescription(response.data.description);
@@ -41,7 +41,7 @@ function UpdateProduct() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:8070/api/products/${id}`, {
+      await axios.put(`http://localhost:8000/api/products/${id}`, {
         product_name: productName,
         description,
         price,

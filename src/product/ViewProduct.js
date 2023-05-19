@@ -13,7 +13,7 @@ function ViewProduct() {
 
   const fetchProduct = async () => {
     try {
-      const response = await axios.get(`http://localhost:8070/api/products/${id}`);
+      const response = await axios.get(`http://localhost:8000/api/products/${id}`);
       console.log(response.data);
       setProduct(response.data);
     } catch (error) {
@@ -23,7 +23,7 @@ function ViewProduct() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:8070/api/products/${id}`);
+      await axios.delete(`http://localhost:8000/api/products/${id}`);
       // Optional: Display a success message or redirect to the product list page
       alert('Product deleted successfully!');
       navigate('/');
@@ -52,6 +52,8 @@ function ViewProduct() {
       <button className="btn btn-danger" onClick={handleDelete}>
         Delete
       </button>
+        <a href={`/products/${product.id}/edit`} className="btn btn-primary">Update</a>
+
     </div>
   );
 }
